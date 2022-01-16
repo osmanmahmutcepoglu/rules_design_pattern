@@ -14,9 +14,8 @@ namespace UnluCo.ExtensionsMethods
         public static bool IsValid(string password)
         {
             var _rules = new List<IPasswordValidationRule>();
-            _rules.Add(new PasswordIsDigitValidationRule(password));
-            _rules.Add(new PasswordIsUpperCaseValidationRule(password));
-            _rules.IsValidPassword(password);
+            _rules.Add(new PasswordIsDigitValidationRule());
+            _rules.Add(new PasswordIsUpperCaseValidationRule());
 
             return _rules.IsValidPassword(password);
         }
