@@ -8,12 +8,12 @@ using UnluCo.ExtensionsMethods.Rules;
 
 namespace UnluCo.ExtensionsMethods
 {
-    public class PassWordValidator
+    public static class PassWordValidator
     {
 
-        public bool IsValid(string password)
+        public static bool IsValid(string password)
         {
-            List<IPasswordValidationRule> _rules = new List<IPasswordValidationRule>();
+            var _rules = new List<IPasswordValidationRule>();
             _rules.Add(new PasswordIsDigitValidationRule(password));
             _rules.Add(new PasswordIsUpperCaseValidationRule(password));
             _rules.IsValidPassword(password);
